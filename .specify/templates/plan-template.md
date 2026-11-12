@@ -31,7 +31,16 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+Puertas de `.specify/memory/constitution.md` (marcar cada una; cualquier ✗ se justifica en *Complexity Tracking*):
+
+- [ ] **I. Accesibilidad AAA:** la UI afectada cumple WCAG 2.2 AAA (contraste ≥ 7:1, teclado, movimiento reducible); las excepciones están documentadas.
+- [ ] **II. Seguridad:** autorización por rol en el servidor, ningún dato de tarjeta en nuestros sistemas, secretos fuera del repo, entradas validadas.
+- [ ] **III. LOPDP:** los datos personales nuevos están en el inventario con finalidad y retención; la PII solo la gestiona el módulo Clientes y está cifrada.
+- [ ] **IV. Escalabilidad y consistencia:** servicios sin estado; cambios de estado de pedidos y pagos con outbox; operaciones idempotentes; precios calculados en el servidor.
+- [ ] **V. Límites de dominio:** cada módulo solo accede a su propio esquema; la comunicación entre módulos es por interfaces o eventos; dependencias nuevas justificadas.
+- [ ] **VI. Calidad:** hay tests unitarios, de integración y E2E planificados; TDD en precios, promociones, pedidos y pagos; el diseño permite cumplir el Quality Gate de SonarQube.
+- [ ] **VII. Reversibilidad:** migraciones expand/contract; feature flags para lo incompleto; el trabajo se puede dividir en commits atómicos y verdes.
+- [ ] **Plataforma:** TypeScript, sin Python; frontend en Vercel, backend en Render; solo el pipeline despliega.
 
 ## Project Structure
 
