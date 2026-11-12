@@ -1,0 +1,18 @@
+# Sistema operativo
+.DS_Store
+
+# Configuración local de Claude Code (puede contener datos personales o permisos locales)
+.claude/settings.local.json
+
+# Dependencias y builds
+node_modules/
+.next/
+dist/
+coverage/
+.turbo/
+
+# Entornos y secretos (constitución, principio II)
+.env
+.env.*
+!.env.example
+.vercel/
